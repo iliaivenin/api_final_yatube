@@ -10,14 +10,14 @@ class Group(models.Model):
         max_length=200,
         help_text="введите уникальное название сообщества",
     )
-    slug = models.SlugField(
-        verbose_name="ключ",
-        unique=True,
-        help_text="ключ",
-    )
-    description = models.TextField(
-        verbose_name="описание",
-        help_text="описание сообщества",)
+    # slug = models.SlugField(
+    #     verbose_name="ключ",
+    #     unique=True,
+    #     help_text="ключ",
+    # )
+    # description = models.TextField(
+    #     verbose_name="описание",
+    #     help_text="описание сообщества",)
 
     class Meta:
         verbose_name = "сообщество"
@@ -96,7 +96,6 @@ class Comment(models.Model):
 
 
 class Follow(models.Model):
-    # pass
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -119,7 +118,7 @@ class Follow(models.Model):
             )
         ]
 
-    # def __str__(self):
-    #     OUTPUT = 'Пользователь: {user} | автор: {following}'
-    #     return OUTPUT.format(user=self.user.username,
-    #                          following=self.following.username)
+    def __str__(self):
+        OUTPUT = 'Пользователь: {user} | автор: {following}'
+        return OUTPUT.format(user=self.user.username,
+                             following=self.following.username)
