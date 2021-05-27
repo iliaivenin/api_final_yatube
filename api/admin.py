@@ -11,10 +11,8 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class GroupAdmin(admin.ModelAdmin):
-    # list_display = ("id", "slug", "title", "description")
     list_display = ("id", "title")
     search_fields = ("title",)
-    # prepopulated_fields = {"slug": ("title",)}
 
 
 class CommentAdmin(admin.ModelAdmin):

@@ -10,14 +10,6 @@ class Group(models.Model):
         max_length=200,
         help_text="введите уникальное название сообщества",
     )
-    # slug = models.SlugField(
-    #     verbose_name="ключ",
-    #     unique=True,
-    #     help_text="ключ",
-    # )
-    # description = models.TextField(
-    #     verbose_name="описание",
-    #     help_text="описание сообщества",)
 
     class Meta:
         verbose_name = "сообщество"
